@@ -56,6 +56,13 @@ int demo3(){
 	testA b=demo2func();
 	cout<<b.x<<endl;
 }
+int demo4func(testA p){
+	return 1;
+}
+int demo4(){
+	testA a(1,2);
+	demo4func(a);
+}
 int main(){
-	demo2();
+	demo4();
 }
