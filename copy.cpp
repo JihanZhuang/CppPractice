@@ -18,16 +18,17 @@ class testA{
 			this->y=y;
 			cout<<"i am construct function!"<<endl;
 		}
-		testA(const testA &b){
+		~testA(){
+			cout<<"i were destoryed!"<<endl;
+		}
+		testA(const testA& b){
+			cout<<"123"<<endl;
 			this->x=b.x+1;
 			this->y=b.y+1;
 			cout<<"i am copy construct func!"<<endl;
 		}
-		~testA(){
-			cout<<"i were destoryed!"<<endl;
-		}
-	protected:
-	private:
+
+		
 };
 int demo1(){
 	testA a(1,2);
@@ -44,11 +45,11 @@ int demo1(){
 }
 testA demo2func(){
 	testA a(1,2);
-	cout<<a.x<<endl;
 	return a;
 }
 int demo2(){
 	testA b(3,4);
+	cout<<b.x<<endl;
 	b=demo2func();
 	cout<<b.x<<endl;
 }
@@ -64,5 +65,5 @@ int demo4(){
 	demo4func(a);
 }
 int main(){
-	demo4();
+	demo3();
 }
