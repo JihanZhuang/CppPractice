@@ -10,17 +10,29 @@ using namespace std;
 class A{
 	public:
 		int x;
+		int y;
 		A(int xx){
 			x=xx;
 			cout<<x<<endl;
+			A(x,10);//这里是产生一个匿名对象，并不能对原本的A中的y属性进行初始化
+		}
+		A(int xx,int yy){
+			x=xx;
+			y=yy;
 		}
 };
 class B{
 	public:
-	B():a1(1),a(10){
+	B():a1(1),a(10),y(100){
 	}
 	B(int xx,int yy):a1(xx),a(yy){
 		y=xx;
+	}
+	int getY(){
+		cout<<y<<endl;
+	}
+	~B(){
+		cout<<"destruct func"<<endl;
 	}
 	private:
 		int y;
@@ -29,5 +41,7 @@ class B{
 };
 int main(){
 	B b1;
+	//b1.getY();
+	cout<<123<<endl;
 	return 1;
 }
