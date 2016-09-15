@@ -18,14 +18,14 @@ int main(){
 	if(pid==0){
 		while(1){
 			printf("i am parent,point is %p,str is %s\n",p,p);
-			sleep(1);
+			sleep(2);
 		}
 	}else{
 		while(1){
 			printf("i am child,point is %p,str is %s\n",p,p);
 			p[0]='w';
 			p[1]='k';
-			sleep(1);
+			sleep(2);
 		}
 	}
 	return 1;
