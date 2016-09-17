@@ -7,6 +7,7 @@
 #include<unistd.h>
 #include<stdio.h>
 #include<stdlib.h>
+int i=0;
 int main(){
 	int pid;
 	char *p;
@@ -18,14 +19,17 @@ int main(){
 	if(pid==0){
 		while(1){
 			printf("i am parent,point is %p,str is %s\n",p,p);
-			sleep(2);
+			printf("%d\n",i);
+			sleep(1);
 		}
 	}else{
 		while(1){
 			printf("i am child,point is %p,str is %s\n",p,p);
 			p[0]='w';
 			p[1]='k';
-			sleep(2);
+			i++;
+			printf("%d\n",i);
+			sleep(1);
 		}
 	}
 	return 1;
