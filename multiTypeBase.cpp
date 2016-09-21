@@ -14,7 +14,7 @@ class Parent{
 		Parent(int x):a(x){
 
 		}
-		virtual void print(){
+		 void print(){
 			cout<<a<<endl;
 		}
 	protected:
@@ -33,11 +33,27 @@ class Child:public Parent{
 	protected:
 	private:
 };
-
+class Child1:public Child{
+	public:
+		int c;
+		Child1(int z):Child(z-2){
+			this->c=z;
+		}
+		void print(){
+			cout<<c<<endl;
+		}
+};
+void howToPrint(Parent *p){
+	p->print();
+}
 int main(){
 	Parent *a=new Parent(1);
 	Child *b=new Child(2);
-	a->print();
+	Child1 *c=new Child1(3);
 	b->print();
+	howToPrint(a);
+	howToPrint(b);
+	howToPrint(c);
+	b->Parent::print();
 	return 1;
 }
