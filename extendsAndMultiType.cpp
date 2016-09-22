@@ -12,6 +12,7 @@ using namespace std;
 class Parent{
 	public:
 		int *p;
+		int i;
 		Parent(){
 			p=(int *)malloc(sizeof(int)*10);
 		}
@@ -43,5 +44,8 @@ void freeClass(Parent *a){
 int main(){
 	Child *a=new Child(10);
 	freeClass(a);
+	Parent *p=new Parent();
+	a++;
+	p++;//两者是不同的，a++是+（3*4）,12个字节，而p是父类，是+8个字节，所以如果p=a;p是数组的开头，然后去p++，这样的移动会有错
 	return 1;
 }
