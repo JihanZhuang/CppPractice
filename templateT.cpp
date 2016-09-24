@@ -13,14 +13,14 @@ void mySwap(T &a,T &b){
 	T c=a;
 	a=b;
 	b=c;
-};
+}
 void pr(int *arr){
 	int i=0;
 	while(i<10){
 		cout<<arr[i]<<endl;
 		i++;
 	}
-};
+}
 template<typename T>
 int Qsort(T *arr,int low,int high){
 	T tmp=arr[low];
@@ -32,7 +32,7 @@ int Qsort(T *arr,int low,int high){
 	}
 	arr[low]=tmp;
 	return low;
-};
+}
 template<typename T>
 void mysort(T *arr,int low,int high){
 	int mid;
@@ -43,7 +43,7 @@ void mysort(T *arr,int low,int high){
 	}else{
 		return;
 	}
-};
+}
 
 int main(){
 	int a=1,b=3;
