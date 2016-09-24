@@ -20,5 +20,10 @@ int main(){
 	int i;
 	i=test(add);
 	cout<<i<<endl;
+	int (*p)(int,int)=add;
+	i=(*p)(10,1);
+	cout<<i<<endl;
+	i=p(13,14);
+	cout<<i<<endl;
 	return 1;
 }
