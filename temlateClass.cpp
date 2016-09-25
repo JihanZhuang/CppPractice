@@ -20,6 +20,19 @@ class test{
 	private:
 		T a;
 };
+
+//a是一个抽象化的类型（参数化的类型），，不能拿来直接使用
+class C : public A<int>
+{
+public:
+	C(int c, int a) :A<int>(a)
+	{
+		this->c = c;
+	}
+protected:
+private:
+	int c;
+};
 void func(test<char> *p){
 	cout<<p->getA()<<endl;
 }
